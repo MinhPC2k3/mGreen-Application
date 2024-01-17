@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class HomeViewModal extends ChangeNotifier{
   int currentScreenView=2;

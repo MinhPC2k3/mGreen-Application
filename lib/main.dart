@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mgreen_app/view/screen/home/main_screen.dart';
 import 'package:mgreen_app/view/screen/login/login_screen.dart';
+import 'package:mgreen_app/view_model/account_viewModal.dart';
 import 'package:mgreen_app/view_model/home_viewModal.dart';
 import 'package:mgreen_app/view_model/login_slideshow_viewmodal.dart';
+import 'package:mgreen_app/view_model/voucher_viewModal.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -21,6 +23,12 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (ctx) => HomeViewModal(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => VoucherViewModal(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => AccountViewModal(),
         ),
       ],
         child: MaterialApp(

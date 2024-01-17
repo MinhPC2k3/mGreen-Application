@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mgreen_app/view/component/bottomAppBar.dart';
 import 'package:mgreen_app/view/screen/Point/point_screen.dart';
 import 'package:mgreen_app/view/screen/account/account_screen.dart';
@@ -9,8 +8,6 @@ import 'package:mgreen_app/view/screen/voucher-screen/voucher_screen.dart';
 import 'package:mgreen_app/view_model/home_viewModal.dart';
 import 'package:provider/provider.dart';
 
-import '../../component/slideshow.dart';
-import 'home_topbar.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -20,7 +17,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   final PageController controllerHomePage = PageController();
   double _scrollPosition = 0;
   double opacityAppBarTitle =0;
@@ -44,7 +41,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Consumer<HomeViewModal>(builder: (context, homeViewModal, child) {
-      List<Widget> _widgetOptions = <Widget>[
+      List<Widget> widgetOptions = <Widget>[
         const PointScreen(),
         const MarketScreen(),
         const HomeScreen(),
@@ -53,11 +50,12 @@ class _MainScreenState extends State<MainScreen> {
 
       ];
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         floatingActionButton: Container(
           height: 70,
           width: 70,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
           ),
           child: FloatingActionButton(
@@ -66,6 +64,7 @@ class _MainScreenState extends State<MainScreen> {
             onPressed: () {
               homeViewModal.changePage(2);
             },
+
             child: CircleAvatar(
               radius: 20,
               child: Image.asset('assets/images/mgreen-icon.jpg'),
@@ -83,7 +82,7 @@ class _MainScreenState extends State<MainScreen> {
         ),
         body: IndexedStack(
           index: homeViewModal.currentScreenView,
-          children: _widgetOptions,
+          children: widgetOptions,
         ),
       );
     });

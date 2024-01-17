@@ -70,7 +70,7 @@ class HomeTopBar extends StatelessWidget{
               height: 150,
               child: Center(
                 child: ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   itemCount: 4,
@@ -88,12 +88,12 @@ class HomeTopBar extends StatelessWidget{
                           child: Container(
                             height: 60,
                             width: 60,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.all(
                                   Radius.circular(20)),
                             ),
-                            margin: EdgeInsets.fromLTRB(
+                            margin: const EdgeInsets.fromLTRB(
                                 10, 10, 10, 10),
                             child: Center(
                               child: Icon(
@@ -107,8 +107,8 @@ class HomeTopBar extends StatelessWidget{
                         Container(
                           width: 60,
                           padding:
-                          EdgeInsets.fromLTRB(10, 0, 10, 0),
-                          child: Center(
+                          const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          child: const Center(
                             child: Text(
                               "Ưu đãi quanh đây",
                               style: TextStyle(

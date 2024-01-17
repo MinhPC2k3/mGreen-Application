@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mgreen_app/view/component/bottomAppBar.dart';
 import 'package:mgreen_app/view_model/home_viewModal.dart';
 import 'package:provider/provider.dart';
 import 'home_topbar.dart';
@@ -13,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   final PageController controllerHomePage = PageController();
   double _scrollPosition = 0;
   double opacityAppBarTitle =0;
@@ -61,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: MediaQuery.of(context).size.width,
 
                       child: ListView.builder(
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         shrinkWrap: true,
                         itemCount: 6,
@@ -74,8 +73,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Container(
                               height: 30,
                               width: 50,
-                              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                              child: Center(
+                              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                              child: const Center(
                                 child: Icon(
                                   FontAwesomeIcons.mapLocationDot,
                                   color: Colors.white,
@@ -119,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: 120,
-                  margin: EdgeInsets.only(top: 30),
+                  margin: const EdgeInsets.only(top: 30),
                   child: Center(
                     child: ListView.builder(
                         shrinkWrap: true,
@@ -129,8 +128,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           return Container(
                             width: 100,
                             height: 80,
-                            margin: EdgeInsets.fromLTRB(5,10,5,10),
-                            padding: EdgeInsets.all(10),
+                            margin: const EdgeInsets.fromLTRB(5,10,5,10),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.blueAccent,
@@ -140,9 +139,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Icon(Icons.calendar_month,color: Colors.white,size: 35,),
+                                const Icon(Icons.calendar_month,color: Colors.white,size: 35,),
                                 Container(
-                                  child: Text("Đặt lịch thu gom tại nhà",style: TextStyle(color: Colors.white),),
+                                  child: const Text("Đặt lịch thu gom tại nhà",style: TextStyle(color: Colors.white),),
                                 )
                               ],
                             ),
@@ -158,11 +157,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    padding: EdgeInsets.fromLTRB(25,30,0,30),
+                    padding: const EdgeInsets.fromLTRB(25,30,0,30),
                     child: Text("DANH SÁCH QUÀ ĐỔI ĐIỂM",style: TextStyle(color: Colors.orangeAccent[400],fontSize: 15),),
                   ),
                   Container(
-                    padding: EdgeInsets.fromLTRB(0, 30, 25, 30),
+                    padding: const EdgeInsets.fromLTRB(0, 30, 25, 30),
                     child: Text("Xem tất cả",style: TextStyle(fontSize:15,color: Colors.orangeAccent[400],decoration: TextDecoration.underline,decorationColor: Colors.orangeAccent[400],),),
                   )
                 ],
@@ -172,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Container(
-                  margin: EdgeInsets.only(left: 15),
+                  margin: const EdgeInsets.only(left: 15),
                   height: 250,
                   width: 150,
                   child: Card(
@@ -183,33 +182,33 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
+                        SizedBox(
                           // decoration: BoxDecoration(
                           //     borderRadius: BorderRadius.all(Radius.circular(10))
                           // ),
                           height: 100,
                           child: ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderRadius: const BorderRadius.all(Radius.circular(10)),
                             child: Image.asset('assets/images/homepage-slideshow.jpg',height: 100,fit: BoxFit.cover),
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 10),
-                          child: Text("Thông báo"),
+                          margin: const EdgeInsets.only(top: 10),
+                          child: const Text("Thông báo"),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 10),
-                          child:  Text("0đ"),
+                          margin: const EdgeInsets.only(top: 10),
+                          child:  const Text("0đ"),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 10),
+                          margin: const EdgeInsets.only(top: 10),
                           child: ElevatedButton(
                             onPressed: (){},
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
 
                             ),
-                            child: Text(
+                            child: const Text(
                               "Xem chi tiết",style: TextStyle(color: Colors.black),
                             ),
                           ),
@@ -221,7 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SliverToBoxAdapter(
-              child: Container(
+              child: SizedBox(
                   height: 200,
                   width: MediaQuery.of(context).size.width * 1,
                   child: PageView(
@@ -292,8 +291,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: List.generate(3, (index) {
                   return Container(
-                    margin: EdgeInsets.fromLTRB(5, 20, 5, 10),
-                    padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
+                    margin: const EdgeInsets.fromLTRB(5, 20, 5, 10),
+                    padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: Colors.blue[100],
@@ -303,10 +302,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          padding: EdgeInsets.only(right: 10),
+                          padding: const EdgeInsets.only(right: 10),
                           child: Icon(FontAwesomeIcons.bookOpen,color: Colors.blue[400],size: 15,),
                         ),
-                        Text("Hướng dẫn",style: TextStyle(color: Colors.black),),
+                        const Text("Hướng dẫn",style: TextStyle(color: Colors.black),),
                       ],
                     ),
                   );
