@@ -383,25 +383,25 @@ class AccountScreen extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width*0.8,
-                    height: MediaQuery.of(context).size.height*0.3,
+                    // width: MediaQuery.of(context).size.width*0.8,
+                    // height: MediaQuery.of(context).size.height*0.3,
                     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                     color: Colors.white,
 
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width*0.7,
-                      height: 150,
-                      child: ElevatedButton(
-                        onPressed: (){},
-
-                        style: ElevatedButton.styleFrom(
-
-                          backgroundColor: Colors.green[400],
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0),),
-                        ),
-                        child: Text("Cập nhật"),
+                    child: ElevatedButton(
+                      onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(MediaQuery.of(context).size.width*0.7, 30),
+                        backgroundColor: Colors.green[400],
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0),),
                       ),
-                    )
+                      child: Text("Cập nhật",style: TextStyle(color: Colors.white),),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width*1,
+                    height: MediaQuery.of(context).size.height*0.2,
+                    color: Colors.white,
                   )
                 ],
               ));
