@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class MarketViewModal {
   static List<String> listCardTitle = ['Voucher miễn phí','Voucher hot'];

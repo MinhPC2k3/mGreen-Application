@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -29,16 +28,16 @@ class GardientAppBar extends StatelessWidget{
 
           decoration: InputDecoration(
             hintText: 'Search...',
-            hintStyle: TextStyle(color: Colors.black),
+            hintStyle: const TextStyle(color: Colors.black),
             filled: true,
             fillColor: Colors.white,
             border:  InputBorder.none,
             enabledBorder: OutlineInputBorder(
               borderSide:
-              BorderSide(width: 3, color: Colors.white), //<-- SEE HERE
+              const BorderSide(width: 3, color: Colors.white), //<-- SEE HERE
               borderRadius: BorderRadius.circular(50.0),
             ),
-            prefixIcon: Icon(Icons.search),
+            prefixIcon: const Icon(Icons.search),
 
 
           ),
@@ -47,7 +46,7 @@ class GardientAppBar extends StatelessWidget{
           },
         ),
       ),
-      actions: [
+      actions: const [
         Icon(Icons.wallet_giftcard_sharp,color: Colors.white,),
       ],
     );

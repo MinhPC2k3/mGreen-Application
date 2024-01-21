@@ -36,16 +36,16 @@ class PointScreen extends StatelessWidget {
             maxLines: 1,
             decoration: InputDecoration(
               hintText: 'Search...',
-              hintStyle: TextStyle(color: Colors.black),
+              hintStyle: const TextStyle(color: Colors.black),
               filled: true,
               fillColor: Colors.white,
               border: InputBorder.none,
               enabledBorder: OutlineInputBorder(
                 borderSide:
-                    BorderSide(width: 3, color: Colors.white), //<-- SEE HERE
+                    const BorderSide(width: 3, color: Colors.white), //<-- SEE HERE
                 borderRadius: BorderRadius.circular(50.0),
               ),
-              prefixIcon: Icon(Icons.search),
+              prefixIcon: const Icon(Icons.search),
             ),
             onChanged: (value) {
               // Perform search functionality here
@@ -54,8 +54,8 @@ class PointScreen extends StatelessWidget {
         ),
         actions: [
           Container(
-            margin: EdgeInsets.only(right: 10),
-            child: Icon(
+            margin: const EdgeInsets.only(right: 10),
+            child: const Icon(
               Icons.wallet_giftcard_sharp,
               color: Colors.white,
             ),
@@ -74,37 +74,34 @@ class PointScreen extends StatelessWidget {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               children:List<Widget>.generate(16, (index) =>
-                  Container(
-                    // margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(10),),
-                            border: Border.all(
-                              width: 1,
-                              color: Colors.grey[400]!,
-                              style: BorderStyle.solid,
-                            ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.all(Radius.circular(10),),
+                          border: Border.all(
+                            width: 1,
+                            color: Colors.grey[400]!,
+                            style: BorderStyle.solid,
                           ),
-                          child: Image.asset('assets/images/cashless-payment.png'),
                         ),
-                        Text('Thẻ điện thoại',style: TextStyle(fontSize: 12,color: Colors.black),)
-
-                      ],
-                    ),
+                        child: Image.asset('assets/images/cashless-payment.png'),
+                      ),
+                      const Text('Thẻ điện thoại',style: TextStyle(fontSize: 12,color: Colors.black),)
+                  
+                    ],
                   )
               ),
 
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 10),
-            padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
+            margin: const EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
             // height: MediaQuery.of(context).size.height*0.6,
             color: Colors.white,
             child: ListView.separated(
@@ -117,12 +114,12 @@ class PointScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      child: Text('Đối tác tích điểm',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,color: Colors.black),),
+                      padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                      child: const Text('Đối tác tích điểm',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,color: Colors.black),),
                     ),
                     Container(
-                      padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-                      child: Text("Xem tất cả", style: TextStyle(fontSize: 12,color: Colors.grey),),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                      child: const Text("Xem tất cả", style: TextStyle(fontSize: 12,color: Colors.grey),),
                     )
 
                   ],
@@ -133,7 +130,7 @@ class PointScreen extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
+                        const SizedBox(
                             height:70,
                             width:70,
                             // decoration: BoxDecoration(
@@ -151,8 +148,8 @@ class PointScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.only(left: 10),
-                            child: Text('Shopee',style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.bold),)
+                          padding: const EdgeInsets.only(left: 10),
+                            child: const Text('Shopee',style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.bold),)
                         )
                       ],
                     ),
@@ -160,7 +157,7 @@ class PointScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Tích điểm",style: TextStyle(color: Colors.purpleAccent,fontSize: 15),),
+                        const Text("Tích điểm",style: TextStyle(color: Colors.purpleAccent,fontSize: 15),),
                         Text("10%",style: TextStyle(color: Theme.of(context).primaryColor,fontSize: 17),),
                       ],
                     )

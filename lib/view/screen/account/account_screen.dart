@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
@@ -187,7 +186,7 @@ class AccountScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                          margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                           decoration:const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
@@ -202,12 +201,12 @@ class AccountScreen extends StatelessWidget {
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width*0.4,
-                                padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                child: Text("Tỉnh/Thành phố",style: TextStyle(fontSize: 15,color: Colors.black),),
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                child: const Text("Tỉnh/Thành phố",style: TextStyle(fontSize: 15,color: Colors.black),),
                               ),
                               Container(
                                 width: MediaQuery.of(context).size.width*0.5,
-                                padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                                 child: InkWell(
                                   onTap: (){
                                     showModalBottomSheet<void>(
@@ -232,7 +231,7 @@ class AccountScreen extends StatelessWidget {
                                       },
                                     );
                                   },
-                                  child: Row(
+                                  child: const Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text("Tỉnh/Thành phố",style: TextStyle(fontSize: 15,color: Colors.black),),
@@ -246,7 +245,7 @@ class AccountScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                          margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                           decoration:const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
@@ -261,12 +260,12 @@ class AccountScreen extends StatelessWidget {
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width*0.4,
-                                padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                child:  Text("Quận/Huyện",style: TextStyle(fontSize: 15,color: Colors.black),),
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                child:  const Text("Quận/Huyện",style: TextStyle(fontSize: 15,color: Colors.black),),
                               ),
                               Container(
                                 width: MediaQuery.of(context).size.width*0.5,
-                                padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                                 child: InkWell(
                                   onTap: (){
                                     showModalBottomSheet<void>(
@@ -291,7 +290,7 @@ class AccountScreen extends StatelessWidget {
                                       },
                                     );
                                   },
-                                  child: Row(
+                                  child: const Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text("Quận/Huyện",style: TextStyle(fontSize: 15,color: Colors.black),),
@@ -305,7 +304,7 @@ class AccountScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                          margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                           decoration:const BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
@@ -320,12 +319,12 @@ class AccountScreen extends StatelessWidget {
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width*0.4,
-                                padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                child:Text("Phường/Xã",style: TextStyle(fontSize: 15,color: Colors.black),),
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                child:const Text("Phường/Xã",style: TextStyle(fontSize: 15,color: Colors.black),),
                               ),
                               Container(
                                 width: MediaQuery.of(context).size.width*0.5,
-                                padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                                 child: InkWell(
                                   onTap: (){
                                     showModalBottomSheet<void>(
@@ -350,7 +349,7 @@ class AccountScreen extends StatelessWidget {
                                       },
                                     );
                                   },
-                                  child: Row(
+                                  child: const Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text("Phường/Xã",style: TextStyle(fontSize: 15,color: Colors.black),),
@@ -385,7 +384,7 @@ class AccountScreen extends StatelessWidget {
                   Container(
                     // width: MediaQuery.of(context).size.width*0.8,
                     // height: MediaQuery.of(context).size.height*0.3,
-                    padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                     color: Colors.white,
 
                     child: ElevatedButton(
@@ -395,7 +394,7 @@ class AccountScreen extends StatelessWidget {
                         backgroundColor: Colors.green[400],
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0),),
                       ),
-                      child: Text("Cập nhật",style: TextStyle(color: Colors.white),),
+                      child: const Text("Cập nhật",style: TextStyle(color: Colors.white),),
                     ),
                   ),
                   Container(

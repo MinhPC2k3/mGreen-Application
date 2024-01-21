@@ -19,7 +19,7 @@ class CardImage extends StatelessWidget{
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
         color: Colors.white,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.grey,
             offset: Offset(0.0, 1.0), //(x,y)
