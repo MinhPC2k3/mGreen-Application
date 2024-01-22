@@ -13,7 +13,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final PageController controller = PageController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 500,
                       width: MediaQuery.of(context).size.width,
                       child: PageView(
-                        controller: controller,
+                        controller: loginSlideshowViewModal.controller,
     // scrollDirection: Axis.horizontal,
                         onPageChanged: (temp) {
                           // print("This is page index $temp");
@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 margin: const EdgeInsets.fromLTRB(0, 40, 0, 0),
                                 child: ElevatedButton(
                                   onPressed: (){
-                                    controller.nextPage(duration:const Duration(milliseconds: 600), curve: Curves.linear);
+                                    loginSlideshowViewModal.controller.nextPage(duration:const Duration(milliseconds: 600), curve: Curves.linear);
                                     loginSlideshowViewModal.changePage(loginSlideshowViewModal.currentPageView+1);
                                   },
                                   child:const Text("Tiếp"),
@@ -135,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 margin: const EdgeInsets.fromLTRB(0, 40, 0, 0),
                                 child: ElevatedButton(
                                   onPressed: (){
-                                    controller.nextPage(duration:const Duration(milliseconds: 600), curve: Curves.linear);
+                                    loginSlideshowViewModal.controller.nextPage(duration:const Duration(milliseconds: 600), curve: Curves.linear);
                                     loginSlideshowViewModal.changePage(loginSlideshowViewModal.currentPageView+1);
                                   },
                                   child:const Text("Tiếp"),

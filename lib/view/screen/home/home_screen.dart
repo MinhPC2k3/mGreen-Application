@@ -12,313 +12,320 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final ScrollController _scrollController = ScrollController();
-  final PageController controllerHomePage = PageController();
-  double _scrollPosition = 0;
-  double opacityAppBarTitle =0;
-  _scrollListener() {
+
+  scrollListener() {
     setState(() {
-      _scrollPosition = _scrollController.position.pixels;
+      scrollPosition = scrollController.position.pixels;
     });
 
   }
 
   @override
   void initState() {
-    _scrollController.addListener(_scrollListener);
-    print("This is position $_scrollPosition");
+    scrollController.addListener(scrollListener);
+
     super.initState();
   }
-  bool get _isSliverAppBarExpanded {
-    return _scrollController.hasClients &&
-        _scrollController.offset > (200 - kToolbarHeight);
-  }
+
   @override
   Widget build(BuildContext context) {
 
     return Consumer<HomeViewModal>(builder: (context, homeViewModal, child) {
 
-      return Scaffold(
+      return FutureBuilder(
+          future: localPath,
+          builder: (context, snapshot){
+            if(snapshot.hasData){
+              print('persistence path ${snapshot.data}');
+              return Scaffold(
 
-        body: CustomScrollView(
-          controller: _scrollController,
-          slivers: [
-            SliverAppBar(
-                automaticallyImplyLeading: false,
-                stretchTriggerOffset: 100.0,
-                backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-                leadingWidth: MediaQuery.of(context).size.width,
-                leading:_isSliverAppBarExpanded ?  SafeArea(
-                  child: Opacity(
-                    opacity: 1,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.inversePrimary,
-                        shape: BoxShape.rectangle,
-                      ),
-                      alignment: Alignment.topLeft,
-                      width: MediaQuery.of(context).size.width,
-
-                      child: ListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        shrinkWrap: true,
-                        itemCount: 6,
-                        // Replace with the actual number of items in your list
-                        itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: () {
-                              print("click btn on appbar");
-                            },
+                body: CustomScrollView(
+                  controller: scrollController,
+                  slivers: [
+                    SliverAppBar(
+                        automaticallyImplyLeading: false,
+                        stretchTriggerOffset: 100.0,
+                        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+                        leadingWidth: MediaQuery.of(context).size.width,
+                        leading:isSliverAppBarExpanded ?  SafeArea(
+                          child: Opacity(
+                            opacity: 1,
                             child: Container(
-                              height: 30,
-                              width: 50,
-                              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                              child: const Center(
-                                child: Icon(
-                                  FontAwesomeIcons.mapLocationDot,
-                                  color: Colors.white,
-                                ),
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).colorScheme.inversePrimary,
+                                shape: BoxShape.rectangle,
+                              ),
+                              alignment: Alignment.topLeft,
+                              width: MediaQuery.of(context).size.width,
+
+                              child: ListView.builder(
+                                physics: const NeverScrollableScrollPhysics(),
+                                scrollDirection: Axis.horizontal,
+                                shrinkWrap: true,
+                                itemCount: 6,
+                                // Replace with the actual number of items in your list
+                                itemBuilder: (context, index) {
+                                  return InkWell(
+                                    onTap: () {
+                                      print("click btn on appbar");
+                                    },
+                                    child: Container(
+                                      height: 30,
+                                      width: 50,
+                                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                      child: const Center(
+                                        child: Icon(
+                                          FontAwesomeIcons.mapLocationDot,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                             ),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                ): null,
-                pinned: true,
-                snap: false,
-                floating: false,
-                stretch: true,
-                expandedHeight: MediaQuery.of(context).size.height * 0.35,
-                flexibleSpace: _isSliverAppBarExpanded ?null : FlexibleSpaceBar(
-                  centerTitle: false,
-                  background: ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(70.0),
-                      bottomRight: Radius.circular(70.0),
-                    ),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        // color: Theme.of(context).colorScheme.inversePrimary,
-                        color: Colors.white,
-                      ),
-                      child: AppBar(
-                        centerTitle: true,
-                        leading: null,
-                        flexibleSpace: const HomeTopBar(),
-                        backgroundColor:
-                        Theme.of(context).colorScheme.inversePrimary,
-                      ),
-                    ),
-                  ),
-                ) ),
-            SliverToBoxAdapter(
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 120,
-                  margin: const EdgeInsets.only(top: 30),
-                  child: Center(
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 3,
-                        itemBuilder: (BuildContext context,int index){
-                          return Container(
-                            width: 100,
-                            height: 80,
-                            margin: const EdgeInsets.fromLTRB(5,10,5,10),
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.blueAccent,
-
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const Icon(Icons.calendar_month,color: Colors.white,size: 35,),
-                                Container(
-                                  child: const Text("Đặt lịch thu gom tại nhà",style: TextStyle(color: Colors.white),),
-                                )
-                              ],
-                            ),
-                          );
-                        }
-                    ),
-                  ),
-                )
-            ),
-            SliverToBoxAdapter(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(25,30,0,30),
-                    child: Text("DANH SÁCH QUÀ ĐỔI ĐIỂM",style: TextStyle(color: Colors.orangeAccent[400],fontSize: 15),),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(0, 30, 25, 30),
-                    child: Text("Xem tất cả",style: TextStyle(fontSize:15,color: Colors.orangeAccent[400],decoration: TextDecoration.underline,decorationColor: Colors.orangeAccent[400],),),
-                  )
-                ],
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  margin: const EdgeInsets.only(left: 15),
-                  height: 250,
-                  width: 150,
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0), // Set the border radius
-                    ),
-                    elevation: 5.0, // Set the elevation
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          // decoration: BoxDecoration(
-                          //     borderRadius: BorderRadius.all(Radius.circular(10))
-                          // ),
-                          height: 100,
-                          child: ClipRRect(
-                            borderRadius: const BorderRadius.all(Radius.circular(10)),
-                            child: Image.asset('assets/images/homepage-slideshow.jpg',height: 100,fit: BoxFit.cover),
                           ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child: const Text("Thông báo"),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child:  const Text("0đ"),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child: ElevatedButton(
-                            onPressed: (){},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white,
-
+                        ): null,
+                        pinned: true,
+                        snap: false,
+                        floating: false,
+                        stretch: true,
+                        expandedHeight: MediaQuery.of(context).size.height * 0.35,
+                        flexibleSpace: isSliverAppBarExpanded ?null : FlexibleSpaceBar(
+                          centerTitle: false,
+                          background: ClipRRect(
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(70.0),
+                              bottomRight: Radius.circular(70.0),
                             ),
-                            child: const Text(
-                              "Xem chi tiết",style: TextStyle(color: Colors.black),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                // color: Theme.of(context).colorScheme.inversePrimary,
+                                color: Colors.white,
+                              ),
+                              child: AppBar(
+                                centerTitle: true,
+                                leading: null,
+                                flexibleSpace: const HomeTopBar(),
+                                backgroundColor:
+                                Theme.of(context).colorScheme.inversePrimary,
+                              ),
+                            ),
+                          ),
+                        ) ),
+                    SliverToBoxAdapter(
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 120,
+                          margin: const EdgeInsets.only(top: 30),
+                          child: Center(
+                            child: ListView.builder(
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                itemCount: 3,
+                                itemBuilder: (BuildContext context,int index){
+                                  return Container(
+                                    width: 100,
+                                    height: 80,
+                                    margin: const EdgeInsets.fromLTRB(5,10,5,10),
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.blueAccent,
+
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        const Icon(Icons.calendar_month,color: Colors.white,size: 35,),
+                                        Container(
+                                          child: const Text("Đặt lịch thu gom tại nhà",style: TextStyle(color: Colors.white),),
+                                        )
+                                      ],
+                                    ),
+                                  );
+                                }
                             ),
                           ),
                         )
-                      ],
                     ),
-                  ),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                  height: 200,
-                  width: MediaQuery.of(context).size.width * 1,
-                  child: PageView(
-                    controller: controllerHomePage,
-                    // scrollDirection: Axis.horizontal,
-                    onPageChanged: (temp) {
-                      // print("This is page index $temp");
-                      homeViewModal.changeSlide(temp);
-                    },
-                    children: <Widget>[
-                      Container(
-                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                        height: 100,
-                        width: MediaQuery.of(context).size.width * 1,
-                        child: Image.asset(
-                            "assets/images/login-slideshow1.jpg"),
+                    SliverToBoxAdapter(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.fromLTRB(25,30,0,30),
+                            child: Text("DANH SÁCH QUÀ ĐỔI ĐIỂM",style: TextStyle(color: Colors.orangeAccent[400],fontSize: 15),),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.fromLTRB(0, 30, 25, 30),
+                            child: Text("Xem tất cả",style: TextStyle(fontSize:15,color: Colors.orangeAccent[400],decoration: TextDecoration.underline,decorationColor: Colors.orangeAccent[400],),),
+                          )
+                        ],
                       ),
-                      Container(
-                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                        height: 100,
-                        width: MediaQuery.of(context).size.width * 1,
-                        child: Image.asset(
-                            "assets/images/login-slideshow1.jpg"),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                        height: 100,
-                        width: MediaQuery.of(context).size.width * 1,
-                        child: Image.asset(
-                            "assets/images/login-slideshow1.jpg"),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                        height: 100,
-                        width: MediaQuery.of(context).size.width * 1,
-                        child: Image.asset(
-                            "assets/images/login-slideshow1.jpg"),
-                      ),
-                    ],
-                  )
-              ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 15),
+                          height: 250,
+                          width: 150,
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0), // Set the border radius
+                            ),
+                            elevation: 5.0, // Set the elevation
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  // decoration: BoxDecoration(
+                                  //     borderRadius: BorderRadius.all(Radius.circular(10))
+                                  // ),
+                                  height: 100,
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                    child: Image.asset('assets/images/homepage-slideshow.jpg',height: 100,fit: BoxFit.cover),
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 10),
+                                  child: const Text("Thông báo"),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 10),
+                                  child:  const Text("0đ"),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 10),
+                                  child: ElevatedButton(
+                                    onPressed: (){},
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.white,
 
-            ),
-            SliverToBoxAdapter(
-              child: Center(
-                child: Wrap(
-                  children: List.generate(
-                    4,
-                        (index) {
-                      return Container(
-                        padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
-                        child: CircleAvatar(
-                          maxRadius: 5,
-                          minRadius: 3,
-                          // radius: 3,
-                          backgroundColor:
-                          homeViewModal.currentSlide == index ? Colors.green[500] : Colors.grey,
+                                    ),
+                                    child: const Text(
+                                      "Xem chi tiết",style: TextStyle(color: Colors.black),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
                         ),
-                        // child: Text("hello world"),
-                      );
-                    },
-                  ),
+                      ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: SizedBox(
+                          height: 200,
+                          width: MediaQuery.of(context).size.width * 1,
+                          child: PageView(
+                            controller: controllerHomePage,
+                            // scrollDirection: Axis.horizontal,
+                            onPageChanged: (temp) {
+                              // print("This is page index $temp");
+                              homeViewModal.changeSlide(temp);
+                            },
+                            children: <Widget>[
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                height: 100,
+                                width: MediaQuery.of(context).size.width * 1,
+                                child: Image.asset(
+                                    "assets/images/login-slideshow1.jpg"),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                height: 100,
+                                width: MediaQuery.of(context).size.width * 1,
+                                child: Image.asset(
+                                    "assets/images/login-slideshow1.jpg"),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                height: 100,
+                                width: MediaQuery.of(context).size.width * 1,
+                                child: Image.asset(
+                                    "assets/images/login-slideshow1.jpg"),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                height: 100,
+                                width: MediaQuery.of(context).size.width * 1,
+                                child: Image.asset(
+                                    "assets/images/login-slideshow1.jpg"),
+                              ),
+                            ],
+                          )
+                      ),
+
+                    ),
+                    SliverToBoxAdapter(
+                      child: Center(
+                        child: Wrap(
+                          children: List.generate(
+                            4,
+                                (index) {
+                              return Container(
+                                padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                                child: CircleAvatar(
+                                  maxRadius: 5,
+                                  minRadius: 3,
+                                  // radius: 3,
+                                  backgroundColor:
+                                  homeViewModal.currentSlide == index ? Colors.green[500] : Colors.grey,
+                                ),
+                                // child: Text("hello world"),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(3, (index) {
+                          return Container(
+                            margin: const EdgeInsets.fromLTRB(5, 20, 5, 10),
+                            padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: Colors.blue[100],
+                                border: Border.all(color: Colors.blue[400]!)
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.only(right: 10),
+                                  child: Icon(FontAwesomeIcons.bookOpen,color: Colors.blue[400],size: 15,),
+                                ),
+                                const Text("Hướng dẫn",style: TextStyle(color: Colors.black),),
+                              ],
+                            ),
+                          );
+                        }),
+                      ),
+                    ),
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 100,
+                      ),
+                    )
+                  ],
                 ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: List.generate(3, (index) {
-                  return Container(
-                    margin: const EdgeInsets.fromLTRB(5, 20, 5, 10),
-                    padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Colors.blue[100],
-                        border: Border.all(color: Colors.blue[400]!)
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: Icon(FontAwesomeIcons.bookOpen,color: Colors.blue[400],size: 15,),
-                        ),
-                        const Text("Hướng dẫn",style: TextStyle(color: Colors.black),),
-                      ],
-                    ),
-                  );
-                }),
-              ),
-            ),
-            const SliverToBoxAdapter(
-              child: SizedBox(
-                height: 100,
-              ),
-            )
-          ],
-        ),
+              );
+            }else{
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            };
+          }
       );
     });
   }

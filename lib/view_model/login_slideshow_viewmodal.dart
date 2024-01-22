@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class LoginSlideShowViewModal extends ChangeNotifier{
+  final PageController controller = PageController();
   int currentPageView=0;
   bool checkValidInput = false;
   TextEditingController inputController = TextEditingController();

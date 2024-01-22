@@ -46,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
         MarketScreen(),
         const HomeScreen(),
         VoucherScreen(homeViewModal: homeViewModal,),
-        const AccountScreen(),
+        AccountScreen(),
 
       ];
       return Scaffold(

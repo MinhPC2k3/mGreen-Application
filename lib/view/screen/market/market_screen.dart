@@ -5,7 +5,7 @@ import 'package:mgreen_app/view_model/market_viewModal.dart';
 
 class MarketScreen extends StatelessWidget{
   MarketScreen({super.key});
-  final TextEditingController _searchController = TextEditingController();
+
   @override
   Widget build (BuildContext context) {
     return Scaffold(
@@ -24,7 +24,7 @@ class MarketScreen extends StatelessWidget{
           height: 50,
           child: TextField(
 
-            controller: _searchController,
+            controller: MarketViewModal.searchController,
             style: const TextStyle(color: Colors.black),
             cursorColor: Colors.black,
             maxLines: 1,
