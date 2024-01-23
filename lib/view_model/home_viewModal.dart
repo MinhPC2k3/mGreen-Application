@@ -13,6 +13,18 @@ class HomeViewModal extends ChangeNotifier{
   int currentScreenView=2;
   double opacityOfAppBarTitle = 0;
   int currentSlide =0;
+  int giftNumber =1;
+  void handleChangeGiftNumber(int temp){
+    if(giftNumber>0 && temp ==1){
+      giftNumber--;
+      print("gift number: $giftNumber");
+      notifyListeners();
+    }else if(temp==0){
+      giftNumber++;
+      print("gift number: $giftNumber");
+      notifyListeners();
+    }
+  }
   void changePage(int index){
     currentScreenView = index;
     notifyListeners();

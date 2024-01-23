@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mgreen_app/view/screen/home/point_used_screen.dart';
 
 class HomeTopBar extends StatelessWidget{
   const HomeTopBar({super.key});
@@ -83,7 +84,7 @@ class HomeTopBar extends StatelessWidget{
                       children: [
                         InkWell(
                           onTap: () {
-                            print("click btn on appbar");
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>PointUsed()));
                           },
                           child: Container(
                             height: 60,

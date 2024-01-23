@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mgreen_app/view/component/bottomAppBar.dart';
+import 'package:mgreen_app/view/component/BottomAppBar.dart';
 import 'package:mgreen_app/view/screen/Point/point_screen.dart';
 import 'package:mgreen_app/view/screen/account/account_screen.dart';
 import 'package:mgreen_app/view/screen/home/home_screen.dart';

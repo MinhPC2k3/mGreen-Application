@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mgreen_app/view/component/cardImgae.dart';
+import 'package:mgreen_app/view/component/CardImgae.dart';
 import 'package:mgreen_app/view_model/market_viewModal.dart';
 
 class MarketScreen extends StatelessWidget{

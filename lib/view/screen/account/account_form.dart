@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:mgreen_app/view/component/rowDropDownBtn.dart';
+import 'package:mgreen_app/view/component/RowDropDownBtn.dart';
 
 import '../../../view_model/account_viewModal.dart';
-import '../../component/textFieldWithIcon.dart';
+import '../../component/TextFieldWithIcon.dart';
 
 class AccountForm extends StatelessWidget{
   const AccountForm({super.key,required this.accountViewModal});

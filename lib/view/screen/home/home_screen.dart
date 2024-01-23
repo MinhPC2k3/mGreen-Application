@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mgreen_app/view/screen/home/change_garbice.dart';
+import 'package:mgreen_app/view/screen/home/gift_from_point_screen.dart';
 import 'package:mgreen_app/view_model/home_viewModal.dart';
 import 'package:provider/provider.dart';
 import 'home_topbar.dart';
@@ -124,25 +126,30 @@ class _HomeScreenState extends State<HomeScreen> {
                                 scrollDirection: Axis.horizontal,
                                 itemCount: 3,
                                 itemBuilder: (BuildContext context,int index){
-                                  return Container(
-                                    width: 100,
-                                    height: 80,
-                                    margin: const EdgeInsets.fromLTRB(5,10,5,10),
-                                    padding: const EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Colors.blueAccent,
+                                  return InkWell(
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ChangeGarbage()));
+                                    },
+                                    child: Container(
+                                      width: 100,
+                                      height: 80,
+                                      margin: const EdgeInsets.fromLTRB(5,10,5,10),
+                                      padding: const EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.blueAccent,
 
-                                    ),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      children: [
-                                        const Icon(Icons.calendar_month,color: Colors.white,size: 35,),
-                                        Container(
-                                          child: const Text("Đặt lịch thu gom tại nhà",style: TextStyle(color: Colors.white),),
-                                        )
-                                      ],
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          const Icon(Icons.calendar_month,color: Colors.white,size: 35,),
+                                          Container(
+                                            child: const Text("Đặt lịch thu gom tại nhà",style: TextStyle(color: Colors.white),),
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   );
                                 }
@@ -202,7 +209,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Container(
                                   margin: const EdgeInsets.only(top: 10),
                                   child: ElevatedButton(
-                                    onPressed: (){},
+                                    onPressed: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const GiftFromPoint()));
+                                    },
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.white,
 
