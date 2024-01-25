@@ -43,10 +43,10 @@ class _MainScreenState extends State<MainScreen> {
     return Consumer<HomeViewModal>(builder: (context, homeViewModal, child) {
       List<Widget> widgetOptions = <Widget>[
         PointScreen(),
-        MarketScreen(),
+        const MarketScreen(),
         const HomeScreen(),
         VoucherScreen(homeViewModal: homeViewModal,),
-        AccountScreen(),
+        const AccountScreen(),
 
       ];
       return Scaffold(

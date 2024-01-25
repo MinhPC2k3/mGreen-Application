@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TextFiledWithIcon extends StatelessWidget {
   const TextFiledWithIcon({super.key, required this.textEditingController,required this.iconData,required this.labelText});

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:intl/intl.dart';
 import 'package:mgreen_app/view/screen/account/account_form.dart';
 import 'package:mgreen_app/view_model/account_viewModal.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +27,7 @@ class _AccountScreenState extends State<AccountScreen> {
           return Scaffold(
               drawerEnableOpenDragGesture: true,
               appBar: AppBar(
-                iconTheme: IconThemeData(color: Colors.white),
+                iconTheme: const IconThemeData(color: Colors.white),
                 // leading: const Icon(
                 //   FontAwesomeIcons.bars,
                 //   color: Colors.white,
@@ -55,7 +54,7 @@ class _AccountScreenState extends State<AccountScreen> {
                       decoration: BoxDecoration(
                         color: Theme.of(context).primaryColor,
                       ),
-                      child: Column(
+                      child: const Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -65,7 +64,7 @@ class _AccountScreenState extends State<AccountScreen> {
                       ),
                     ),
                     ListTile(
-                      leading: Icon(Icons.info),
+                      leading: const Icon(Icons.info),
                       title: const Text('Về mGreen'),
                       selected: _selectedIndex == 0,
                       onTap: () {
@@ -76,7 +75,7 @@ class _AccountScreenState extends State<AccountScreen> {
                       },
                     ),
                     ListTile(
-                      leading: Icon(Icons.history),
+                      leading: const Icon(Icons.history),
                       title: const Text('Lịch sử'),
                       selected: _selectedIndex == 1,
                       onTap: () {
@@ -87,7 +86,7 @@ class _AccountScreenState extends State<AccountScreen> {
                       },
                     ),
                     ListTile(
-                      leading: Icon(FontAwesomeIcons.arrowRightFromBracket),
+                      leading: const Icon(FontAwesomeIcons.arrowRightFromBracket),
                       title: const Text('Đăng xuất'),
                       selected: _selectedIndex == 2,
                       onTap: () {

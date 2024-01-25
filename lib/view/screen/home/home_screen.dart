@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 itemBuilder: (BuildContext context,int index){
                                   return InkWell(
                                     onTap: (){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ChangeGarbage()));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const ChangeGarbage()));
                                     },
                                     child: Container(
                                       width: 100,
@@ -330,10 +330,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               );
             }else{
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
-            };
+            }
           }
       );
     });

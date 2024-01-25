@@ -8,7 +8,7 @@ class PointUsed extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Sử dụng điểm',
           style: TextStyle(
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
@@ -17,12 +17,12 @@ class PointUsed extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
       ),
       backgroundColor: Colors.grey[300],
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height*0.35,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Center(
@@ -38,12 +38,12 @@ class PointUsed extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Đưa mã này cho thu ngân "),
-                        SizedBox(
+                        const Text("Đưa mã này cho thu ngân "),
+                        const SizedBox(
                           height: 20,
                         ),
-                        Text("Tự động cập nhật mã sau 15 giây"),
-                        Text("Cập nhật", style: TextStyle(color: Colors.blue),),
+                        const Text("Tự động cập nhật mã sau 15 giây"),
+                        const Text("Cập nhật", style: TextStyle(color: Colors.blue),),
 
                         Stack(
                           children: [
@@ -92,18 +92,18 @@ class PointUsed extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              padding: EdgeInsets.fromLTRB(10, 20, 0, 10),
-                              child: Text('Số điểm đang có'),
+                              padding: const EdgeInsets.fromLTRB(10, 20, 0, 10),
+                              child: const Text('Số điểm đang có'),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.fromLTRB(10, 10, 0, 10),
-                                  child: Text('30 điểm'),
+                                  padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+                                  child: const Text('30 điểm'),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                                   child: Text('NẠP THÊM',style: TextStyle(color: Theme.of(context).primaryColor),),
                                 ),
 

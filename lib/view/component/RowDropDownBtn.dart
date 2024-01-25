@@ -22,7 +22,7 @@ class RowDropDownBtn extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width*0.4,
             padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-            child:  Text(buttonName,style: TextStyle(fontSize: 15,color: Colors.black),),
+            child:  Text(buttonName,style: const TextStyle(fontSize: 15,color: Colors.black),),
           ),
           Container(
             width: MediaQuery.of(context).size.width*0.5,
@@ -54,8 +54,8 @@ class RowDropDownBtn extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(buttonName,style: TextStyle(fontSize: 15,color: Colors.black),),
-                  Icon(FontAwesomeIcons.caretDown,size: 17,color: Colors.grey,),
+                  Text(buttonName,style: const TextStyle(fontSize: 15,color: Colors.black),),
+                  const Icon(FontAwesomeIcons.caretDown,size: 17,color: Colors.grey,),
                 ],
               ),
             ),

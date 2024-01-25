@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,7 +18,7 @@ class _GiftFromPointState extends State<GiftFromPoint> {
       return Scaffold(
         appBar: AppBar(
           foregroundColor: Colors.white,
-          title: Text(
+          title: const Text(
             'Chi tiết quà đổi điểm',
             style: TextStyle(
                 color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
@@ -28,8 +27,8 @@ class _GiftFromPointState extends State<GiftFromPoint> {
           backgroundColor: Theme.of(context).primaryColor,
           actions: [
             Container(
-              padding: EdgeInsets.only(right: 10),
-              child: Icon(
+              padding: const EdgeInsets.only(right: 10),
+              child: const Icon(
                 FontAwesomeIcons.cartShopping,
                 size: 20,
                 color: Colors.white,
@@ -42,7 +41,7 @@ class _GiftFromPointState extends State<GiftFromPoint> {
             Container(
               height: MediaQuery.of(context).size.height * 0.3,
               // padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-              margin: EdgeInsets.only(top: 15, left: 10, right: 10),
+              margin: const EdgeInsets.only(top: 15, left: 10, right: 10),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -62,8 +61,8 @@ class _GiftFromPointState extends State<GiftFromPoint> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(bottom: 20),
-                        padding: EdgeInsets.all(0),
+                        margin: const EdgeInsets.only(bottom: 20),
+                        padding: const EdgeInsets.all(0),
                         child: Text(
                           'mGreen - Thành phố Huế',
                           style: TextStyle(
@@ -73,8 +72,8 @@ class _GiftFromPointState extends State<GiftFromPoint> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(bottom: 25, left: 10),
-                        child: Image(
+                        margin: const EdgeInsets.only(bottom: 25, left: 10),
+                        child: const Image(
                           image: AssetImage('assets/images/logomgreen.png'),
                           width: 50,
                           height: 50,
@@ -84,9 +83,9 @@ class _GiftFromPointState extends State<GiftFromPoint> {
                     ],
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 10, right: 10),
+                    padding: const EdgeInsets.only(left: 10, right: 10),
                     child: const Text(
-                      "${"Giảm giá lên tới 50% quà tặng tại Siêu thị quà trên app mGreen"}",
+                      "Giảm giá lên tới 50% quà tặng tại Siêu thị quà trên app mGreen",
                       style: TextStyle(
                           color: Colors.red,
                           fontWeight: FontWeight.bold,
@@ -99,14 +98,14 @@ class _GiftFromPointState extends State<GiftFromPoint> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 15),
+              margin: const EdgeInsets.only(top: 15),
               height: MediaQuery.of(context).size.height * 0.1,
-              padding: EdgeInsets.only(left: 10, right: 10),
+              padding: const EdgeInsets.only(left: 10, right: 10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Thông báo",
                     style: TextStyle(
                         color: Colors.black,
@@ -114,9 +113,9 @@ class _GiftFromPointState extends State<GiftFromPoint> {
                         fontSize: 15),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: RichText(
-                      text: TextSpan(
+                      text: const TextSpan(
                         children: [
                           TextSpan(
                               text: "Đổi điểm: ",
@@ -132,7 +131,7 @@ class _GiftFromPointState extends State<GiftFromPoint> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(10,0,10,15),
+              padding: const EdgeInsets.fromLTRB(10,0,10,15),
               child: Divider(
                 height: 5,
                 color: Colors.grey[300],
@@ -141,7 +140,7 @@ class _GiftFromPointState extends State<GiftFromPoint> {
             ),
             Container(
               child: RichText(
-                text: TextSpan(
+                text: const TextSpan(
                   children: [
                     TextSpan(
                         text: "Thời gian hết hạn: ",
@@ -156,7 +155,7 @@ class _GiftFromPointState extends State<GiftFromPoint> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(10,15,10,10),
+              padding: const EdgeInsets.fromLTRB(10,15,10,10),
               child: Divider(
                 height: 5,
                 color: Colors.grey[300],
@@ -164,12 +163,12 @@ class _GiftFromPointState extends State<GiftFromPoint> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 10,bottom: 20),
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+              margin: const EdgeInsets.only(top: 10,bottom: 20),
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("Số lượng: "),
+                  const Text("Số lượng: "),
                   SizedBox(
                     height: 30,
                     width: 30,
@@ -180,18 +179,18 @@ class _GiftFromPointState extends State<GiftFromPoint> {
                               side: BorderSide(color: Colors.grey[300]!)
                           ),
                           backgroundColor: Colors.white,
-                          padding: EdgeInsets.all(0)
+                          padding: const EdgeInsets.all(0)
                       ),
                       onPressed: (){
                         homeViewModal.handleChangeGiftNumber(1);
                       },
-                      child: Icon(FontAwesomeIcons.minus,color: Colors.black,size: 10,),
+                      child: const Icon(FontAwesomeIcons.minus,color: Colors.black,size: 10,),
                     ),
                   ),
                   Container(
                     height: 30,
                     width: 30,
-                    margin: EdgeInsets.only(left: 5,right: 5),
+                    margin: const EdgeInsets.only(left: 5,right: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: Colors.white,
@@ -211,16 +210,16 @@ class _GiftFromPointState extends State<GiftFromPoint> {
                                   side: BorderSide(color: Colors.grey[300]!)
                           ),
                           backgroundColor: Colors.white,
-                        padding: EdgeInsets.all(0)
+                        padding: const EdgeInsets.all(0)
                       ),
                       onPressed: (){
                         homeViewModal.handleChangeGiftNumber(0);
                       },
-                      child: Icon(FontAwesomeIcons.plus,color: Colors.black,size: 10),
+                      child: const Icon(FontAwesomeIcons.plus,color: Colors.black,size: 10),
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10),
                     child: Text("Số lượng còn: ${homeViewModal.giftNumber}"),
                   ),
 
@@ -239,7 +238,7 @@ class _GiftFromPointState extends State<GiftFromPoint> {
                           borderRadius: BorderRadius.circular(5.0),
                       ),
                       backgroundColor: Theme.of(context).primaryColor,
-                      padding: EdgeInsets.all(10)
+                      padding: const EdgeInsets.all(10)
 
                     ),
                     onPressed: () {},
@@ -249,7 +248,7 @@ class _GiftFromPointState extends State<GiftFromPoint> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 SizedBox(
@@ -261,7 +260,7 @@ class _GiftFromPointState extends State<GiftFromPoint> {
                           borderRadius: BorderRadius.circular(5.0),
                       ),
                       backgroundColor: Theme.of(context).primaryColor,
-                      padding: EdgeInsets.all(10)
+                      padding: const EdgeInsets.all(10)
                     ),
                     onPressed: () {},
                     child: const Text(

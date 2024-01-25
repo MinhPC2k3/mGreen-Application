@@ -4,7 +4,7 @@ import 'package:mgreen_app/view/component/CardImgae.dart';
 import 'package:mgreen_app/view_model/market_viewModal.dart';
 
 class MarketScreen extends StatelessWidget{
-  MarketScreen({super.key});
+  const MarketScreen({super.key});
 
   @override
   Widget build (BuildContext context) {

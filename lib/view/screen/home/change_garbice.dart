@@ -8,7 +8,7 @@ class ChangeGarbage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Đổi rác lấy quà',
             style: TextStyle(
                 color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
@@ -22,28 +22,28 @@ class ChangeGarbage extends StatelessWidget {
           child: ListView(
             children: [
               Container(
-                padding: EdgeInsets.all(15),
-                child: Text('Mời bạn mang rác tái chế tới các địa điểm sau để được tích điểm đổi quà',style: TextStyle(color: Colors.black,fontSize: 15,),maxLines: 2,),
+                padding: const EdgeInsets.all(15),
+                child: const Text('Mời bạn mang rác tái chế tới các địa điểm sau để được tích điểm đổi quà',style: TextStyle(color: Colors.black,fontSize: 15,),maxLines: 2,),
               ),
               Container(
-                padding: EdgeInsets.all(15),
-                child: Text('Danh sách điểm thu mua rác tái chế và đổi quà',style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),maxLines: 2,),
+                padding: const EdgeInsets.all(15),
+                child: const Text('Danh sách điểm thu mua rác tái chế và đổi quà',style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),maxLines: 2,),
               ),
               ListView.separated(
                 shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context,index){
                     return Container(
                       height: MediaQuery.of(context).size.height*0.15,
                       // margin: EdgeInsets.only(left: 10,right: 10),],
                       width: MediaQuery.of(context).size.width *1,
-                      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      margin: EdgeInsets.all(0),
+                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                      margin: const EdgeInsets.all(0),
                       child:Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
+                          const SizedBox(
                             width: 100,
                             height: 150,
 
@@ -54,18 +54,18 @@ class ChangeGarbage extends StatelessWidget {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("69 Vọng Hà, Hoàn Kiếm, Hà nội",style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),),
+                                const Text("69 Vọng Hà, Hoàn Kiếm, Hà nội",style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),),
                                 Container(
-                                  padding: EdgeInsets.only(top: 5,bottom: 5),
+                                  padding: const EdgeInsets.only(top: 5,bottom: 5),
                                   child: RichText(
-                                    text: TextSpan(
+                                    text: const TextSpan(
                                       children: [
                                         WidgetSpan(
                                           child: Icon(Icons.phone, size: 17),
@@ -79,10 +79,10 @@ class ChangeGarbage extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.only(bottom: 5),
-                                  child: Text("Thời gian hoạt động: ",style: TextStyle(color: Colors.black,fontSize: 15,),),
+                                  padding: const EdgeInsets.only(bottom: 5),
+                                  child: const Text("Thời gian hoạt động: ",style: TextStyle(color: Colors.black,fontSize: 15,),),
                                 ),
-                                Row(
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text("Thứ Bảy, 8:00 - 11:00",style: TextStyle(color: Colors.black,fontSize: 15),),
@@ -98,7 +98,7 @@ class ChangeGarbage extends StatelessWidget {
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) =>Container(
-                    padding: EdgeInsets.only(top:15,bottom: 15),
+                    padding: const EdgeInsets.only(top:15,bottom: 15),
                     child: Divider(
                       height: 5,
                       color: Colors.grey[300],
