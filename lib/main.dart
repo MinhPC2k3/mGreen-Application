@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mgreen_app/view/component/testing.dart';
 import 'package:mgreen_app/view/screen/home/main_screen.dart';
 import 'package:mgreen_app/view/screen/login/login_screen.dart';
 import 'package:mgreen_app/view_model/account_viewModal.dart';
@@ -32,11 +33,12 @@ class MyApp extends StatelessWidget {
         ),
       ],
         child: MaterialApp(
-          initialRoute: '/home',
+          initialRoute: '/login',
           routes: {
             '/login': (context) => const LoginScreen(),
             // When navigating to the "/second" route, build the SecondScreen widget.
             '/home': (context) => const MainScreen(),
+            '/testing': (context) => Testing(),
           },
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green[300]!),
