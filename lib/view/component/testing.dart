@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 class Testing extends StatefulWidget {
-  Testing({Key? key}) : super(key: key);
+  const Testing({Key? key}) : super(key: key);
 
   @override
   _TestingState createState() => _TestingState();
 }
 
 class _TestingState extends State<Testing> {
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -38,8 +38,8 @@ class _TestingState extends State<Testing> {
             stretch: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: false,
-              stretchModes: [StretchMode.zoomBackground],
-              title: Text('running running'),
+              stretchModes: const [StretchMode.zoomBackground],
+              title: const Text('running running'),
               background: Image.asset(
                 'assets/images/user-logo.png',
                 fit: BoxFit.cover,
@@ -48,7 +48,7 @@ class _TestingState extends State<Testing> {
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate((_, i) {
-              return ListTile(title: Text("Item ${i}"));
+              return ListTile(title: Text("Item $i"));
             }, childCount: 20),
           ),
         ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mgreen_app/view/screen/home/change_garbice.dart';
 import 'package:mgreen_app/view/screen/home/gift_from_point_screen.dart';
+import 'package:mgreen_app/view/screen/home/home_question_screen.dart';
 import 'package:mgreen_app/view_model/home_viewModal.dart';
 import 'package:provider/provider.dart';
 import 'home_topbar.dart';
@@ -299,23 +300,28 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: List.generate(3, (index) {
-                          return Container(
-                            margin: const EdgeInsets.fromLTRB(5, 20, 5, 10),
-                            padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.blue[100],
-                                border: Border.all(color: Colors.blue[400]!)
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.only(right: 10),
-                                  child: Icon(FontAwesomeIcons.bookOpen,color: Colors.blue[400],size: 15,),
-                                ),
-                                const Text("Hướng dẫn",style: TextStyle(color: Colors.black),),
-                              ],
+                          return InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeQuestion()));
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.fromLTRB(5, 20, 5, 10),
+                              padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: Colors.blue[100],
+                                  border: Border.all(color: Colors.blue[400]!)
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.only(right: 10),
+                                    child: Icon(FontAwesomeIcons.bookOpen,color: Colors.blue[400],size: 15,),
+                                  ),
+                                  const Text("Hướng dẫn",style: TextStyle(color: Colors.black),),
+                                ],
+                              ),
                             ),
                           );
                         }),

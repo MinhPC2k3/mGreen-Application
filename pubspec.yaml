@@ -74,6 +74,10 @@ flutter:
     - assets/images/cashless-payment.png
     - assets/images/shopping-cart.png
     - assets/images/Shopee-logo.jpg
+    - assets/images/background_question.jpg
+    - assets/images/column_code.png
+    - assets/images/qr_example.png
+    - assets/images/gift_img.jpeg
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

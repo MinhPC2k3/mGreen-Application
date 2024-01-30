@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mgreen_app/view/screen/Point/mobile_card_screen.dart';
+import 'package:mgreen_app/view/screen/Point/save_point_screen.dart';
 
 class PointScreen extends StatelessWidget {
   PointScreen({super.key});
@@ -74,26 +76,31 @@ class PointScreen extends StatelessWidget {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               children:List<Widget>.generate(16, (index) =>
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(Radius.circular(10),),
-                          border: Border.all(
-                            width: 1,
-                            color: Colors.grey[400]!,
-                            style: BorderStyle.solid,
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>MobileCard()));
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.all(Radius.circular(10),),
+                            border: Border.all(
+                              width: 1,
+                              color: Colors.grey[400]!,
+                              style: BorderStyle.solid,
+                            ),
                           ),
+                          child: Image.asset('assets/images/cashless-payment.png'),
                         ),
-                        child: Image.asset('assets/images/cashless-payment.png'),
-                      ),
-                      const Text('Thẻ điện thoại',style: TextStyle(fontSize: 12,color: Colors.black),)
-                  
-                    ],
+                        const Text('Thẻ điện thoại',style: TextStyle(fontSize: 12,color: Colors.black),)
+
+                      ],
+                    ),
                   )
               ),
 
@@ -123,14 +130,18 @@ class PointScreen extends StatelessWidget {
                     )
 
                   ],
-                ) : Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const SizedBox(
+                ) : InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const SavePoint()));
+                  },
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const SizedBox(
                             height:70,
                             width:70,
                             // decoration: BoxDecoration(
@@ -145,23 +156,24 @@ class PointScreen extends StatelessWidget {
                                 height: 70,
                                 fit: BoxFit.cover,
                               ),
+                            ),
                           ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.only(left: 10),
-                            child: const Text('Shopee',style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.bold),)
-                        )
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text("Tích điểm",style: TextStyle(color: Colors.purpleAccent,fontSize: 15),),
-                        Text("10%",style: TextStyle(color: Theme.of(context).primaryColor,fontSize: 17),),
-                      ],
-                    )
-                  ],
+                          Container(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: const Text('Shopee',style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.bold),)
+                          )
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text("Tích điểm",style: TextStyle(color: Colors.purpleAccent,fontSize: 15),),
+                          Text("10%",style: TextStyle(color: Theme.of(context).primaryColor,fontSize: 17),),
+                        ],
+                      )
+                    ],
+                  ),
                 );
               },
             ),
