@@ -81,14 +81,11 @@ class AccountForm extends StatelessWidget{
                     );
 
                     if(pickedDate != null ){
-                      print(pickedDate);  //pickedDate output format => 2021-03-10 00:00:00.000
                       String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
-                      print(formattedDate); //formatted date output using intl package =>  2021-03-16
                       //you can implement different kind of Date Format here according to your requirement
 
                       accountViewModal.setTextDate(formattedDate);
                     }else{
-                      print("Date is not selected");
                     }
                   },
                 ),
@@ -108,9 +105,7 @@ class AccountForm extends StatelessWidget{
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      child:Icon(FontAwesomeIcons.marsAndVenus,color: Colors.green[300],size: 30,),
-                    ),
+                    Icon(FontAwesomeIcons.marsAndVenus,color: Colors.green[300],size: 30,),
                     SizedBox(
                       width: 150,
                       child: ListTile(

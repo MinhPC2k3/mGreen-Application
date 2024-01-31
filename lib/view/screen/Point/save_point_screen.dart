@@ -36,9 +36,7 @@ class SavePoint extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      child: const Text('Số điểm đang có', style: TextStyle(color: Colors.black, fontSize: 15),),
-                    ),
+                    const Text('Số điểm đang có', style: TextStyle(color: Colors.black, fontSize: 15),),
                     Container(
                       margin: const EdgeInsets.only(top: 5),
                       child: Text('30', style:  TextStyle(color: Theme.of(context).primaryColor,fontSize: 20,fontWeight: FontWeight.bold),),
@@ -190,9 +188,7 @@ class SavePoint extends StatelessWidget{
                               margin: const EdgeInsets.only(top: 10,bottom: 10),
                               child: const Divider(),
                             ),
-                            Container(
-                              child: const Text('Danh sách cửa hàng',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-                            ),
+                            const Text('Danh sách cửa hàng',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [

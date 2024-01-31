@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mgreen_app/view/component/ResizableText.dart';
 
 class StackExample extends StatefulWidget {
   const StackExample({super.key});
@@ -15,65 +16,12 @@ class _StackExampleState extends State<StackExample> {
 
   @override
   Widget build(BuildContext context) {
-    return
-      Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(20),
-        child: Stack(
-          clipBehavior: Clip.none,
-          alignment: AlignmentDirectional.bottomCenter,
-          children: [
-            Image(
-              image: const AssetImage('assets/images/gift_img.jpeg'),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height*0.3,
-              fit: BoxFit.cover,
-            ),
-            // ClipRRect(borderRadius: BorderRadius.circular(25), child: Image.asset('assets/images/gift_img.jpeg')),
-            Positioned(
-              bottom: -50,
-              right: 20,
-              left: 20,
-              child: Container(
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white,
-                ),
-                padding: const EdgeInsets.all(20),
-                alignment: Alignment.center,
-                child: const Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "TITLE",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, decoration: TextDecoration.none, color: Colors.black),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "Hey, There?",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, decoration: TextDecoration.none, color: Colors.black),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "This is the example",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 15, decoration: TextDecoration.none, color: Colors.black),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
+    return const Center(
+      child: ResizableText(
+        textContent: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',),
+        textStyle: TextStyle(fontSize: 15),
+        firstPartLine: 3,
+      ),
+    );
   }
 }

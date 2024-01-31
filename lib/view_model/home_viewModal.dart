@@ -17,11 +17,9 @@ class HomeViewModal extends ChangeNotifier{
   void handleChangeGiftNumber(int temp){
     if(giftNumber>0 && temp ==1){
       giftNumber--;
-      print("gift number: $giftNumber");
       notifyListeners();
     }else if(temp==0){
       giftNumber++;
-      print("gift number: $giftNumber");
       notifyListeners();
     }
   }

@@ -31,7 +31,6 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     _scrollController.addListener(_scrollListener);
-    print("This is position $_scrollPosition");
     super.initState();
   }
   bool get _isSliverAppBarExpanded {

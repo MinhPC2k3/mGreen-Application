@@ -14,7 +14,6 @@ class BottomCustomAppBar extends StatelessWidget{
       backgroundColor: Colors.white,
       onTap: (int index){
         homeViewModal.changePage(index);
-        print("page index $index");
       },
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(

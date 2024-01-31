@@ -39,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
           future: localPath,
           builder: (context, snapshot){
             if(snapshot.hasData){
-              print('persistence path ${snapshot.data}');
               return Scaffold(
 
                 body: CustomScrollView(
@@ -70,7 +69,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 itemBuilder: (context, index) {
                                   return InkWell(
                                     onTap: () {
-                                      print("click btn on appbar");
                                     },
                                     child: Container(
                                       height: 30,
@@ -141,14 +139,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Colors.blueAccent,
 
                                       ),
-                                      child: Column(
+                                      child: const Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         crossAxisAlignment: CrossAxisAlignment.center,
                                         children: [
-                                          const Icon(Icons.calendar_month,color: Colors.white,size: 35,),
-                                          Container(
-                                            child: const Text("Đặt lịch thu gom tại nhà",style: TextStyle(color: Colors.white),),
-                                          )
+                                          Icon(Icons.calendar_month,color: Colors.white,size: 35,),
+                                          Text("Đặt lịch thu gom tại nhà",style: TextStyle(color: Colors.white),)
                                         ],
                                       ),
                                     ),

@@ -73,9 +73,7 @@ class _LoginDialogState extends State<LoginDialog> {
                 if(widget.loginSlideShowViewModal.checkValidInput){
                   Navigator.of(context).pop(true);
                   Navigator.pushReplacementNamed(context, '/home');
-                  print("Return true input");
                 }else {
-                  print("Return false input");
                   showDialog<String>(
                     context: context,
                     builder: (BuildContext context) => AlertDialog(

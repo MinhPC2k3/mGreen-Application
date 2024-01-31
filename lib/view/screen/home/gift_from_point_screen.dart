@@ -138,20 +138,18 @@ class _GiftFromPointState extends State<GiftFromPoint> {
                 thickness: 5,
               ),
             ),
-            Container(
-              child: RichText(
-                text: const TextSpan(
-                  children: [
-                    TextSpan(
-                        text: "Thời gian hết hạn: ",
-                        style:
-                        TextStyle(color: Colors.black, fontSize: 14)),
-                    TextSpan(
-                        text: "06/01/2024",
-                        style:
-                        TextStyle(color: Colors.red, fontSize: 17)),
-                  ],
-                ),
+            RichText(
+              text: const TextSpan(
+                children: [
+                  TextSpan(
+                      text: "Thời gian hết hạn: ",
+                      style:
+                      TextStyle(color: Colors.black, fontSize: 14)),
+                  TextSpan(
+                      text: "06/01/2024",
+                      style:
+                      TextStyle(color: Colors.red, fontSize: 17)),
+                ],
               ),
             ),
             Container(

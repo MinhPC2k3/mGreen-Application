@@ -12,8 +12,6 @@ class _TestingState extends State<Testing> {
   @override
   void initState() {
     _scrollController.addListener((){
-
-      print("this is offset ${_scrollController.offset}");
     });
 
     super.initState();

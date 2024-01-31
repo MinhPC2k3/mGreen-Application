@@ -145,10 +145,7 @@ class MobileCard extends StatelessWidget{
                           SizedBox(
                             width: MediaQuery.of(context).size.width*0.15,
                           ),
-                          Container(
-
-                            child: Text("10.000 đ",style: TextStyle(color: Theme.of(context).primaryColor,fontSize: 20),),
-                          ),
+                          Text("10.000 đ",style: TextStyle(color: Theme.of(context).primaryColor,fontSize: 20),),
                         ],
                       ),
                     ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mgreen_app/view/screen/voucher-screen/StackContent.dart';
+import 'package:mgreen_app/view/component/StackContent.dart';
 import 'package:mgreen_app/view_model/home_viewModal.dart';
 import 'package:mgreen_app/view_model/voucher_viewModal.dart';
 import 'package:provider/provider.dart';
@@ -88,7 +88,6 @@ class _VoucherScreenState extends State<VoucherScreen>
 
                                   onPressed: (){
                                     voucherViewModal.changeCurrentVoucherView();
-                                    print("index current ${voucherViewModal.currentVoucherView}");
                                   },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: voucherViewModal.currentVoucherView==0 ? Colors.green : Colors.white,
@@ -104,7 +103,6 @@ class _VoucherScreenState extends State<VoucherScreen>
                                 ElevatedButton(
                                   onPressed: (){
                                     voucherViewModal.changeCurrentVoucherView();
-                                    print("index current ${voucherViewModal.currentVoucherView}");
                                   },
                                   style: ElevatedButton.styleFrom(
 
@@ -141,7 +139,6 @@ class _VoucherScreenState extends State<VoucherScreen>
                                 ElevatedButton(
                                   onPressed: (){
                                     voucherViewModal.changeCurrentVoucherView();
-                                    print("index current ${voucherViewModal.currentVoucherView}");
                                   },
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: voucherViewModal.currentVoucherView==0 ? Colors.green : Colors.white,
@@ -157,7 +154,6 @@ class _VoucherScreenState extends State<VoucherScreen>
                                 ElevatedButton(
                                   onPressed: (){
                                     voucherViewModal.changeCurrentVoucherView();
-                                    print("index current ${voucherViewModal.currentVoucherView}");
                                   },
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: voucherViewModal.currentVoucherView==1 ? Colors.green : Colors.white,
@@ -200,7 +196,6 @@ class _VoucherScreenState extends State<VoucherScreen>
 
                                   onPressed: (){
                                     voucherViewModal.changeCurrentVoucherView();
-                                    print("index current ${voucherViewModal.currentVoucherView}");
                                   },
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: voucherViewModal.currentVoucherView==0 ? Colors.green : Colors.white,
@@ -216,7 +211,6 @@ class _VoucherScreenState extends State<VoucherScreen>
                                 ElevatedButton(
                                   onPressed: (){
                                     voucherViewModal.changeCurrentVoucherView();
-                                    print("index current ${voucherViewModal.currentVoucherView}");
                                   },
                                   style: ElevatedButton.styleFrom(
 
@@ -253,7 +247,6 @@ class _VoucherScreenState extends State<VoucherScreen>
                                 ElevatedButton(
                                   onPressed: (){
                                     voucherViewModal.changeCurrentVoucherView();
-                                    print("index current ${voucherViewModal.currentVoucherView}");
                                   },
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: voucherViewModal.currentVoucherView==0 ? Colors.green : Colors.white,
@@ -269,7 +262,6 @@ class _VoucherScreenState extends State<VoucherScreen>
                                 ElevatedButton(
                                   onPressed: (){
                                     voucherViewModal.changeCurrentVoucherView();
-                                    print("index current ${voucherViewModal.currentVoucherView}");
                                   },
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: voucherViewModal.currentVoucherView==1 ? Colors.green : Colors.white,
