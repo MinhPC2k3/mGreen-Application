@@ -1,3 +1,4 @@
+import 'package:connection_standard_package/connection_standard_package.dart';
 import 'package:flutter/material.dart';
 import 'package:mgreen_app/view/component/BottomAppBar.dart';
 import 'package:mgreen_app/view/screen/Point/point_screen.dart';
@@ -21,6 +22,7 @@ class _MainScreenState extends State<MainScreen> {
   final PageController controllerHomePage = PageController();
   double _scrollPosition = 0;
   double opacityAppBarTitle =0;
+
   _scrollListener() {
     setState(() {
       _scrollPosition = _scrollController.position.pixels;

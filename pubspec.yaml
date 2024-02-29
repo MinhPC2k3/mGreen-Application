@@ -2,7 +2,7 @@ name: mgreen_app
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+#publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -34,6 +34,10 @@ dependencies:
   font_awesome_flutter: '>= 4.7.0'
   intl: ^0.19.0
   path_provider: ^2.1.2
+  minh_weather_app: 0.0.7
+  connection_standard_package: ^0.0.4
+  webview_flutter: ^4.4.3
+  http: ^1.2.1
 
 
 
@@ -78,6 +82,14 @@ flutter:
     - assets/images/column_code.png
     - assets/images/qr_example.png
     - assets/images/gift_img.jpeg
+    - assets/images/football/league-2.png
+    - assets/images/football/league-135.png
+    - assets/images/football/league-61.png
+    - assets/images/football/league-39.png
+    - assets/images/football/league-4.png
+    - assets/images/football/league78.png
+    - assets/images/newspaper.png
+    - assets/images/weather-news.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

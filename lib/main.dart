@@ -7,6 +7,8 @@ import 'package:mgreen_app/view_model/home_viewModal.dart';
 import 'package:mgreen_app/view_model/login_slideshow_viewmodal.dart';
 import 'package:mgreen_app/view_model/voucher_viewModal.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
+import 'mini_app/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +16,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  // static const platform = MethodChannel('com.example.mgreen_app');
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -33,12 +35,13 @@ class MyApp extends StatelessWidget {
         ),
       ],
         child: MaterialApp(
-          initialRoute: '/login',
+          initialRoute: '/miniApp',
           routes: {
             '/login': (context) => const LoginScreen(),
             // When navigating to the "/second" route, build the SecondScreen widget.
             '/home': (context) => const MainScreen(),
             '/testing': (context) => const StackExample(),
+            '/miniApp': (context) => MiniAppScreen(),
           },
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green[300]!),
