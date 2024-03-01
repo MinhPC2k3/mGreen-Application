@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
             // When navigating to the "/second" route, build the SecondScreen widget.
             '/home': (context) => const MainScreen(),
             '/testing': (context) => const StackExample(),
-            '/miniApp': (context) => MiniAppScreen(),
+            '/miniApp': (context) => const MiniAppScreen(),
           },
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green[300]!),

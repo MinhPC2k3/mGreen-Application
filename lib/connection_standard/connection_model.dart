@@ -1,16 +1,18 @@
-class MiniAppInfor {
+class MiniAppInfo {
   int? appID;
   String? appName;
   String? appPicture;
   String? appType;
+  String? appLink;
 
-  MiniAppInfor({this.appID, this.appName, this.appPicture, this.appType});
+  MiniAppInfo({this.appID, this.appName, this.appPicture, this.appType,this.appLink});
 
-  MiniAppInfor.fromJson(Map<String, dynamic> json) {
+  MiniAppInfo.fromJson(Map<String, dynamic> json) {
     appID = json['AppID'];
     appName = json['AppName'];
     appPicture = json['AppPicture'];
     appType = json['AppType'];
+    appLink = json['AppLink'];
   }
 
   Map<String, dynamic> toJson() {
@@ -19,6 +21,7 @@ class MiniAppInfor {
     data['AppName'] = this.appName;
     data['AppPicture'] = this.appPicture;
     data['AppType'] = this.appType;
+    data['AppLink'] = this.appLink;
     return data;
   }
 }
