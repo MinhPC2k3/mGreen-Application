@@ -26,7 +26,7 @@ class _MiniAppScreenState extends State<MiniAppScreen> {
   @override
   void initState(){
     super.initState();
-    listWidget=[MobileCard(),WeatherApp(constructorConnectionStandard: connectionStandard),const BaomoiHomeScreen()];
+    listWidget=[MobileCard(),WeatherApp(navigateBackBtn: IconButton(icon: Icon(Icons.chevron_left,size: 20,),onPressed: (){Navigator.pop(context);},),),const BaomoiHomeScreen()];
     print('Original list: ${listWidget.length}');
   }
 

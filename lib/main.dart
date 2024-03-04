@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
         child: MaterialApp(
-          initialRoute: '/miniApp',
+          initialRoute: '/home',
           routes: {
             '/login': (context) => const LoginScreen(),
             // When navigating to the "/second" route, build the SecondScreen widget.

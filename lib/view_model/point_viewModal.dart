@@ -40,7 +40,7 @@ class PointViewModal {
         ConnectionStandard connectionStandard =  ConnectionStandard(userID: 1,  isOpenMiniApp: true);
         return InkWell(
           onTap: (){
-            connectionStandard.navigateToMiniApp(context, WeatherApp(constructorConnectionStandard: connectionStandard));
+            connectionStandard.navigateToMiniApp(context, WeatherApp(navigateBackBtn: IconButton(icon: Icon(Icons.chevron_left,size: 20,),onPressed: (){Navigator.pop(context);},),));
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

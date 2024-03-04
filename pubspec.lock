@@ -223,10 +223,10 @@ packages:
     dependency: "direct main"
     description:
       name: minh_weather_app
-      sha256: "771deb0a9af7489f154c09f251327aaa29748b0bb976fb9de0a0fa71b6dc62b0"
+      sha256: eb688a4aedf4116acd9607667b5b407ab88d18107e56fb9db9d5eb07f48a903c
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.7"
+    version: "0.0.8"
   nested:
     dependency: transitive
     description:

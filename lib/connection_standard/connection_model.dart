@@ -16,12 +16,12 @@ class MiniAppInfo {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['AppID'] = this.appID;
-    data['AppName'] = this.appName;
-    data['AppPicture'] = this.appPicture;
-    data['AppType'] = this.appType;
-    data['AppLink'] = this.appLink;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['AppID'] = appID;
+    data['AppName'] = appName;
+    data['AppPicture'] = appPicture;
+    data['AppType'] = appType;
+    data['AppLink'] = appLink;
     return data;
   }
 }

@@ -301,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: List.generate(3, (index) {
                           return index == 2 ? InkWell(
                             onTap: (){
-                              connectionStandard.navigateToMiniApp(context, WeatherApp(constructorConnectionStandard: connectionStandard));
+                              connectionStandard.navigateToMiniApp(context, WeatherApp(navigateBackBtn: IconButton(icon: Icon(Icons.chevron_left,size: 20,),onPressed: (){Navigator.pop(context);},),));
                             },
                             child: Container(
                               margin: const EdgeInsets.fromLTRB(5, 20, 5, 10),

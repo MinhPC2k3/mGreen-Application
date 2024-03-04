@@ -32,6 +32,7 @@ Future<Map<MiniAppInfo,Widget>> initMapMiniApp(List<Widget> listWidget) async{
   if(response.statusCode == 200){
     print("doing0");
     listAppInfo = await compute(parseInfo,response.body);
+    // listAppInfo = jsonDecode(response.body).map((value) =>MiniAppInfo.fromJson(value)).toList();
     print("doing1");
   }else {
     throw Exception('Failed to call api');
