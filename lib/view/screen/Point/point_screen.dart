@@ -1,7 +1,5 @@
-import 'package:connection_standard_package/connection_standard_package.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mgreen_app/view/screen/Point/mobile_card_screen.dart';
 import 'package:mgreen_app/view/screen/Point/save_point_screen.dart';
 
 import '../../../view_model/point_viewModal.dart';
@@ -10,10 +8,9 @@ class PointScreen extends StatelessWidget {
   PointScreen({super.key});
 
   final TextEditingController _searchController = TextEditingController();
-  final pointScreenViewModal = PointViewModal();
-
   @override
   Widget build(BuildContext context) {
+    final listMiniApp = ListMiniApp();
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
@@ -73,51 +70,21 @@ class PointScreen extends StatelessWidget {
         children: [
           Container(
             color: Colors.white,
+            child: listMiniApp.displayMiniAppBtn(context),
             // height: MediaQuery.of(context).size.height * 0.7,
-            child: GridView.builder(
-              shrinkWrap: true,
-              itemCount: 16,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-              ),
-              itemBuilder: (BuildContext context, int index) {
-                // pointScreenViewModal.getButton(index, context);
-                return pointScreenViewModal.getButton(index, context);
-              },
-              // children:List<Widget>.generate(16, (index) => pointScreenViewModal.getButton(index, context),
-              //     // InkWell(
-              //     //   onTap: (){
-              //     //     Navigator.push(context,MaterialPageRoute(builder: (context)=>MobileCard()));
-              //     //   },
-              //     //   child: Column(
-              //     //     crossAxisAlignment: CrossAxisAlignment.center,
-              //     //     mainAxisAlignment: MainAxisAlignment.center,
-              //     //     children: [
-              //     //       Container(
-              //     //         height: 50,
-              //     //         width: 50,
-              //     //         decoration: BoxDecoration(
-              //     //           borderRadius: const BorderRadius.all(Radius.circular(10),),
-              //     //           border: Border.all(
-              //     //             width: 1,
-              //     //             color: Colors.grey[400]!,
-              //     //             style: BorderStyle.solid,
-              //     //           ),
-              //     //         ),
-              //     //         child: Image.asset('assets/images/cashless-payment.png'),
-              //     //       ),
-              //     //       const Text('Thẻ điện thoại',style: TextStyle(fontSize: 12,color: Colors.black),)
-              //     //
-              //     //     ],
-              //     //   ),
-              //     // )
-              //
-              //
-              // ),
-
-            ),
+            // child: GridView.builder(
+            //   shrinkWrap: true,
+            //   itemCount: 16,
+            //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            //     crossAxisCount: 4,
+            //     crossAxisSpacing: 10,
+            //     mainAxisSpacing: 10,
+            //   ),
+            //   itemBuilder: (BuildContext context, int index) {
+            //     // pointScreenViewModal.getButton(index, context);
+            //     return pointScreenViewModal.getButton(index, context);
+            //   },
+            // ),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),

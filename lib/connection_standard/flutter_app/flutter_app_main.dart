@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:minh_weather_app/app.dart';
 
+import '../../view/screen/Point/mobile_card_screen.dart';
+
 class FlutterApp extends StatelessWidget{
   const FlutterApp({super.key, required this.appName});
   final String appName;
   @override
   Widget build(BuildContext context){
-    return Container(
-      child: appName =="Thời tiết" ? WeatherApp(navigateBackBtn: IconButton(icon: Icon(Icons.chevron_left,size: 20,),onPressed: (){Navigator.pop(context);},),) : Center(child: Text("App do not define"),),
-    );
+    switch(appName){
+      case "Thời tiết":
+        return WeatherApp(navigateBackBtn: IconButton(icon: const Icon(Icons.chevron_left,size: 20,),onPressed: (){Navigator.pop(context);},),);
+        break;
+      case "Thẻ Điện Thoại":
+        return MobileCard();
+        break;
+      default:
+        return  const Center(child: Text("App do not define"),);
+
+    }
   }
 }

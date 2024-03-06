@@ -43,7 +43,7 @@ class MiniAppDisplay extends StatelessWidget{
             ),
             child: Image.network(listMiniApp.entries.elementAt(index).key.appPicture!),
           ),
-          Text(listMiniApp.entries.elementAt(index).key.appName!,style: const TextStyle(fontSize: 12,color: Colors.black),)
+          Text(listMiniApp.entries.elementAt(index).key.appName!,style: const TextStyle(fontSize: 12,color: Colors.black,overflow: TextOverflow.ellipsis),)
 
         ],
       ),

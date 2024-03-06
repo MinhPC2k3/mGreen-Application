@@ -49,7 +49,7 @@ class _WebAppViewState extends State<WebAppView> {
               body: Stack(
                 children: [
                   WebViewWidget(
-                    controller: context.read<WebAppCubit>().webViewController!,
+                    controller: context.read<WebAppCubit>().webViewController,
                   ),
                   if(state <100) LinearProgressIndicator(
                     color: Colors.blueAccent,

@@ -51,7 +51,7 @@ class WebAppCubit extends Cubit<int> {
       await webViewController.goBack();
     } else {
       messenger.showSnackBar(
-        SnackBar(content: Text("No back history")),
+        const SnackBar(content: Text("No back history")),
       );
     }
     return;

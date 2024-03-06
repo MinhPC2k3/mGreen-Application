@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 // import 'package:mgreen_app/data/mini_app_infor_data_source.dart';
 import 'package:minh_weather_app/app.dart';
 import 'package:connection_standard_package/connection_standard_package.dart';
-import 'package:http/http.dart' as http;
 import '../connection_standard/connection_model.dart';
 import '../connection_standard/mini_app_container.dart';
 import '../connection_standard/mini_app_handle_display.dart';
@@ -26,7 +25,7 @@ class _MiniAppScreenState extends State<MiniAppScreen> {
   @override
   void initState(){
     super.initState();
-    listWidget=[MobileCard(),WeatherApp(navigateBackBtn: IconButton(icon: Icon(Icons.chevron_left,size: 20,),onPressed: (){Navigator.pop(context);},),),const BaomoiHomeScreen()];
+    listWidget=[MobileCard(),WeatherApp(navigateBackBtn: IconButton(icon: const Icon(Icons.chevron_left,size: 20,),onPressed: (){Navigator.pop(context);},),),const BaomoiHomeScreen()];
     print('Original list: ${listWidget.length}');
   }
 
@@ -38,7 +37,7 @@ class _MiniAppScreenState extends State<MiniAppScreen> {
         future: initMapMiniApp(listWidget),
         builder: (context,snapshot){
           if(!snapshot.hasData){
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }else{
@@ -50,14 +49,14 @@ class _MiniAppScreenState extends State<MiniAppScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Center(
+                    const Center(
                       child: Text("Live Score", style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
                     ),
                     Container(
                       height: MediaQuery.of(context).size.height*0.12,
                       width: double.infinity,
-                      padding: EdgeInsets.all(0),
-                      margin: EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
+                      margin: const EdgeInsets.all(0),
                       decoration: BoxDecoration(
 
                         gradient: LinearGradient(
@@ -65,7 +64,7 @@ class _MiniAppScreenState extends State<MiniAppScreen> {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                         ),
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(50),
                           topLeft: Radius.circular(50),
                         ),

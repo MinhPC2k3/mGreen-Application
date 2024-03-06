@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mgreen_app/view/screen/home/main_screen.dart';
 import 'package:mgreen_app/view_model/login_slideshow_viewmodal.dart';
 
 class LoginDialog extends StatefulWidget{
@@ -72,7 +73,8 @@ class _LoginDialogState extends State<LoginDialog> {
                 widget.loginSlideShowViewModal.checkInput(widget.loginSlideShowViewModal.inputController.text);
                 if(widget.loginSlideShowViewModal.checkValidInput){
                   Navigator.of(context).pop(true);
-                  Navigator.pushReplacementNamed(context, '/home');
+                  // Navigator.pushReplacementNamed(context, '/home');
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainScreen(userPhoneNumber: widget.loginSlideShowViewModal.inputController.text)));
                 }else {
                   showDialog<String>(
                     context: context,

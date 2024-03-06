@@ -2,16 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import'cubit/webapp_cubit.dart';
 import 'webapp_screen.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
-import 'cubit_observer.dart';
 
 // void main() {
 //   Bloc.observer = const CubitObserver();
