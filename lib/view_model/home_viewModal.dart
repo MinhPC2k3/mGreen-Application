@@ -11,7 +11,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 final ScrollController scrollController = ScrollController();
 final PageController controllerHomePage = PageController();
 double scrollPosition = 0;
-final storage = FlutterSecureStorage();
+const storage = FlutterSecureStorage();
 
 class HomeViewModal extends ChangeNotifier{
   final ScrollController scrollController = ScrollController();

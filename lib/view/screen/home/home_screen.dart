@@ -1,7 +1,6 @@
 import 'package:connection_standard_package/connection_standard_package.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mgreen_app/model/login_modal.dart';
 import 'package:mgreen_app/view/screen/home/change_garbice.dart';
 import 'package:mgreen_app/view/screen/home/gift_from_point_screen.dart';
 import 'package:mgreen_app/view/screen/home/home_question_screen.dart';
@@ -280,7 +279,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           minRadius: 3,
                           // radius: 3,
                           backgroundColor:
-                          homeViewModal!.currentSlide == index ? Colors.green[500] : Colors.grey,
+                          homeViewModal.currentSlide == index ? Colors.green[500] : Colors.grey,
                         ),
                         // child: Text("hello world"),
                       );

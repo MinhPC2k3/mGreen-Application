@@ -9,7 +9,6 @@ class WebAppCubit extends Cubit<int> {
   void loadingWebApp(String temp) => {
         if (state == 0)
           {
-            // webViewController =WebViewController(),
             webViewController
               ..setNavigationDelegate(NavigationDelegate(onPageStarted: (url) {
                 emit(0);
@@ -20,17 +19,6 @@ class WebAppCubit extends Cubit<int> {
               }))
               ..loadRequest(Uri.parse(temp)),
           }
-        // else
-        //   {
-        //     webViewController
-        //       ..setNavigationDelegate(NavigationDelegate(onPageStarted: (url) {
-        //         emit(0);
-        //       }, onProgress: (progress) {
-        //         emit(progress);
-        //       }, onPageFinished: (url) {
-        //         emit(100);
-        //       }))
-        //   }
       };
 
   void goForward(BuildContext context) async {

@@ -26,24 +26,19 @@ List<MiniAppInfo> parseInfo(String responseBody){
 Future<Map<MiniAppInfo,Widget>> initMapMiniApp(List<Widget> listWidget) async{
   var uri = Uri.parse(miniAppUrl);
   var response = await http.get(uri);
-  print("doing2");
   Map<MiniAppInfo,Widget> temp = {};
   List<MiniAppInfo> listAppInfo=[];
   if(response.statusCode == 200){
-    print("doing0");
     listAppInfo = await compute(parseInfo,response.body);
     // listAppInfo = jsonDecode(response.body).map((value) =>MiniAppInfo.fromJson(value)).toList();
-    print("doing1");
   }else {
     throw Exception('Failed to call api');
   }
-  print("doing");
   for (var i in listAppInfo){
     temp.addEntries([
       MapEntry(i,listWidget.elementAt(listAppInfo.indexOf(i))),
     ]);
   }
-  print("doing3");
   return temp;
 }
   // Future<Map<MiniAppInfor, Widget>> initMapMiniApp (List<Widget> listWidget) async{

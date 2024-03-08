@@ -39,6 +39,8 @@ dependencies:
   webview_flutter: ^4.4.3
   http: ^1.2.1
   flutter_secure_storage: ^9.0.0
+  flutter_bloc: ^8.1.4
+  bloc: ^8.1.3
 
 
 

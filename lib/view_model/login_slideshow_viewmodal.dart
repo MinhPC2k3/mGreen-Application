@@ -1,8 +1,5 @@
-import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
-import 'package:http/http.dart' as http;
-import 'package:mgreen_app/config/config.dart';
 import '../model/login_modal.dart';
 
 class LoginSlideShowViewModal extends ChangeNotifier{

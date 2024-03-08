@@ -11,10 +11,9 @@ class FlutterApp extends StatelessWidget{
     switch(appName){
       case "Thời tiết":
         return WeatherApp(navigateBackBtn: IconButton(icon: const Icon(Icons.chevron_left,size: 20,),onPressed: (){Navigator.pop(context);},),);
-        break;
+
       case "Thẻ Điện Thoại":
         return MobileCard();
-        break;
       default:
         return  const Center(child: Text("App do not define"),);
 
