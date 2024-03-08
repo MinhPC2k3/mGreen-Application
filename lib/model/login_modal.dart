@@ -21,10 +21,11 @@ class AccountSuperApp{
 }
 
 class GetJwtKey{
+  
   GetJwtKey._({required this.jwtKey});
   final String jwtKey;
   
-  factory GetJwtKey.fronJson(Map<String,dynamic> json) =>
+  factory GetJwtKey.fromJson(Map<String,dynamic> json) =>
       GetJwtKey._(jwtKey: json["Authorization"]);
   Map<String,dynamic> toJson() =>{
     "Authorization": jwtKey

@@ -20,9 +20,9 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   final ScrollController _scrollController = ScrollController();
-  final PageController controllerHomePage = PageController();
+  // final PageController controllerHomePage = PageController();
   double _scrollPosition = 0;
-  double opacityAppBarTitle =0;
+  // double opacityAppBarTitle =0;
 
   _scrollListener() {
     setState(() {
