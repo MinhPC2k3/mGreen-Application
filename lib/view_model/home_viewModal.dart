@@ -60,7 +60,7 @@ Future<AccountSuperApp> postLogin(String userPhoneNumber) async{
   final response = await http.post(Uri.parse(getAuthenToken),headers: <String, String>{
     'Content-Type': 'application/json; charset=UTF-8',
   },body: jsonEncode(postBody));
-  await storage.write(key: "JwtKey", value: response.headers["authorization"]);
+  await storage.write(key: "JwtKeySuperApp", value: response.headers["authorization"]);
 
   if(response.statusCode == 200){
     print("Jwt key :${response.headers["authorization"]}");

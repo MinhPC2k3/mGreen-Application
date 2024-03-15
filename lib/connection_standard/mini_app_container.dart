@@ -3,7 +3,8 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:provider/provider.dart';
+import '../view_model/home_viewModal.dart';
 import '../config/config.dart';
 import 'connection_model.dart';
 
@@ -40,6 +41,24 @@ Future<Map<MiniAppInfo,Widget>> initMapMiniApp(List<Widget> listWidget) async{
     ]);
   }
   return temp;
+}
+
+Future<String> getMiniAppJwtKey () async{
+
+  var uri = Uri.parse(getAuthenTokenMiniApp);
+  var superAppKey = await storage.read(key: "JwtKeySuperApp");
+  final response = await http.get(uri,headers: <String,String>{
+    "authorization": superAppKey!
+  });
+
+  if(response.statusCode == 200){
+    print("Jwt key mini app ${response.headers["authorization"]}");
+    return jsonDecode(response.body).toString();
+  }else{
+    print("error: ${response.statusCode}");
+    throw Exception("Empty return from api");
+  }
+
 }
   // Future<Map<MiniAppInfor, Widget>> initMapMiniApp (List<Widget> listWidget) async{
   //   var uri = Uri.parse(miniAppUrl);

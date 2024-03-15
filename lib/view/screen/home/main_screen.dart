@@ -58,7 +58,6 @@ class _MainScreenState extends State<MainScreen> {
                 HomeScreen(userPhoneNumber: widget.userPhoneNumber,),
                 VoucherScreen(homeViewModal: homeViewModal,),
                 const AccountScreen(),
-
               ];
               return Scaffold(
                 resizeToAvoidBottomInset: false,
